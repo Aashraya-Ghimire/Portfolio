@@ -10,7 +10,6 @@ function Contact() {
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
-      
         <form
           action=""
           className="w-full md:w-1/2 space-y-6 bg-[#1e1e3f] p-8 rounded-xl shadow-lg"

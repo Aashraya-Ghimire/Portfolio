@@ -18,21 +18,20 @@ const About = () => {
           />
         </div>
 
-        <div className="max-w-xl text-lg leading-relaxed text-center md:text-left">
+        <div className="max-w-xl text-2xl leading-relaxed text-center md:text-left">
           <p>
             Hi, I'm{" "}
             <span className="text-[#aa6be4] font-medium">Aashraya Ghimire</span>
-            , a{" "}
+            ,{" "}
             <span className="font-medium">
               17-year-old fresher web developer
             </span>{" "}
-            from Nepal with a passion for building clean, responsive websites. I
-            specialize in{" "}
+            from Nepal. I specialize in{" "}
             <span className="text-[#aa6be4]">
-              React.js, JavaScript, HTML, CSS
+              React, JavaScript, HTML, CSS, Tailwind, and MongoDB
             </span>
-            , and <span className="text-[#aa6be4]">Tailwind CSS</span>, and love
-            turning ideas into smooth, user-friendly experiences.
+            , creating clean and responsive websites while continuously learning
+            new tech.
           </p>
         </div>
       </div>
