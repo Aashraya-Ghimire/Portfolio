@@ -38,7 +38,7 @@ const About = () => {
 
       <div className="mt-12 flex justify-center">
         <a
-          href="/resume.pdf"
+          href="./Aashraya CV.pdf"
           download
           className="bg-[#aa6be4] text-white px-6 py-3 rounded-full hover:bg-[#8b4ee0] flex items-center gap-2 transition"
         >
