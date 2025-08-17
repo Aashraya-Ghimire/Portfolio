@@ -13,7 +13,7 @@ function Project() {
     },
     {
       title: "E-Commerce",
-      img: "/Ecommerce.png",
+      img: "/bgimage.png",
       description:
         "A responsive e-commerce site with product listings and cart built with React and Tailwind CSS.",
       github: "https://github.com/Aashraya-Ghimire/E-Commerce",

@@ -9,6 +9,10 @@ const skills = [
   { name: "Tailwind CSS", src: "/tailwind.png" },
   { name: "GitHub", src: "/github.png" },
   { name: "MongoDB", src: "/mongodb.png" },
+  { name: "Git", src: "/git.png" },
+  { name: "Postman", src: "/postman.png" },
+  { name: "Python", src: "/python.png" },
+  { name: "ExpressJS", src: "/express.png" },
 ];
 
 function Skills() {
