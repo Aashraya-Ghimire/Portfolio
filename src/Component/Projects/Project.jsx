@@ -16,8 +16,8 @@ function Project() {
       img: "/Ecommerce.png",
       description:
         "A responsive e-commerce site with product listings and cart built with React and Tailwind CSS.",
-      github: "https://github.com/Aashraya-Ghimire/E-commerce",
-      live: "https://feastfoodd.netlify.app/",
+      github: "https://github.com/Aashraya-Ghimire/E-Commerce",
+      live: "https://sportstor.netlify.app",
     },
     {
       title: "School Website",
