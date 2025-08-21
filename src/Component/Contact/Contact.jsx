@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import { FaHeadset } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 function Contact() {
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -25,16 +27,29 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className=" text-white py-20 px-6">
-      <div className="flex items-center justify-center gap-3 mb-12 text-[#aa6be4]">
+    <section id="contact" className="text-white mt-25 px-6">
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="flex items-center justify-center gap-3 mb-12 text-[#aa6be4]"
+      >
         <FaHeadset className="text-5xl mb-2" />
         <h2 className="text-4xl font-bold text-center">Contact Me</h2>
-      </div>
+      </motion.div>
 
+      {/* Contact Container */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
-        <form
+        {/* Form */}
+        <motion.form
           ref={form}
           onSubmit={sendEmail}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
           className="w-full md:w-1/2 space-y-6 bg-[#1e1e3f] p-8 rounded-xl shadow-lg"
         >
           <div>
@@ -45,7 +60,6 @@ function Contact() {
               id="name"
               name="name"
               type="text"
-              autoComplete="name"
               placeholder="What's your name?"
               required
               className="w-full px-4 py-2 rounded-md bg-[#2c2c4a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#aa6be4] transition duration-200"
@@ -60,7 +74,6 @@ function Contact() {
               id="email"
               name="email"
               type="email"
-              autoComplete="email"
               placeholder="What's your email address?"
               required
               className="w-full px-4 py-2 rounded-md bg-[#2c2c4a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#aa6be4] transition duration-200"
@@ -80,22 +93,32 @@ function Contact() {
               className="w-full px-4 py-2 rounded-md bg-[#2c2c4a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#aa6be4] transition duration-200"
             ></textarea>
           </div>
+
           <button
             type="submit"
             className="bg-[#aa6be4] hover:bg-[#8a4fe1] transition px-6 py-2 rounded-full font-medium text-white shadow-md cursor-pointer"
           >
             Submit
           </button>
-        </form>
-        <div className="hidden md:block w-full md:w-1/2">
+        </motion.form>
+
+        {/* Illustration */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="hidden md:block w-full md:w-1/2"
+        >
           <img
             src="/contact.png"
             alt="Contact illustration"
             className="w-full h-auto object-contain rounded-xl"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 export default Contact;

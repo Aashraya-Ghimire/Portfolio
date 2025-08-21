@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const skills = [
   { name: "HTML5", src: "/html.png" },
@@ -15,19 +16,32 @@ const skills = [
   { name: "ExpressJS", src: "/express.png" },
 ];
 
-function Skills() {
+const Skills = () => {
   return (
-    <section className="bg-[#12123e] text-white py-20 px-6">
-      <h2 className="text-4xl font-bold text-center text-[#aa6be4] mb-16">
+    <section id="skills" className=" text-white px-6">
+      {/* Section Title */}
+      <motion.h2
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-center text-[#aa6be4] mb-16"
+      >
         My Skills
-      </h2>
+      </motion.h2>
 
+      {/* Skills Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
         {skills.map((skill, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
             className="group bg-white/5 backdrop-blur-lg border border-white/10 hover:border-[#aa6be4] p-6 rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_30px_#aa6be4] flex flex-col items-center"
           >
+            {/* Icon Container */}
             <div className="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-[#aa6be4]/20 transition-all duration-300">
               <img
                 src={skill.src}
@@ -35,14 +49,22 @@ function Skills() {
                 className="w-12 h-12 object-contain transition-transform duration-300 group-hover:rotate-6"
               />
             </div>
+            {/* Skill Name */}
             <p className="text-base font-medium text-gray-200 group-hover:text-[#aa6be4]">
               {skill.name}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
+      <motion.hr
+        initial={{ width: 0, opacity: 0 }}
+        whileInView={{ width: "80%", opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-[10%]"
+      />
     </section>
   );
-}
+};
 
 export default Skills;
