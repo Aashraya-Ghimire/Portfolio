@@ -18,7 +18,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className=" text-white px-6">
+    <section id="skills" className=" text-white px-6 box-border">
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}

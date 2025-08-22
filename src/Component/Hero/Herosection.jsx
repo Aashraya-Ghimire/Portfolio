@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 function Herosection() {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center box-border">
         <section
           id="home"
           className="flex flex-wrap justify-around items-center mt-[130px] mb-[75px] px-4"

@@ -1,13 +1,12 @@
-import React from 'react'
-import Landing from './Component/Landing/Landing'
+import React from "react";
+import Landing from "./Component/Landing/Landing";
 
-
-function App () {
+function App() {
   return (
-    <div>
-     <Landing/>
+    <div className="w-[100vw] box-border">
+      <Landing />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

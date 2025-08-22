@@ -13,14 +13,14 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-[100vw] bg-[#12123e] text-white px-4 sm:px-6 lg:px-16 py-4 shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#12123e] text-white px-4 sm:px-6 lg:px-16 py-4 shadow-md z-50 box-border">
       <div className="flex justify-between items-center mx-auto">
         {/* Logo */}
         <div
           onClick={() => scrollToSection("home")}
           className="text-xl sm:text-2xl font-semibold cursor-pointer"
         >
-          Aashraya's Portfolio
+          Aashraya&apos;s Portfolio
         </div>
 
         {/* Desktop Links */}
@@ -42,6 +42,7 @@ function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="focus:outline-none"
+            aria-label="Toggle Menu"
           >
             {isOpen ? (
               <HiX className="w-6 h-6" />
@@ -57,6 +58,7 @@ function Navbar() {
         className={`md:hidden absolute top-full left-0 w-full bg-[#12123e] overflow-hidden transition-all duration-300 ${
           isOpen ? "max-h-screen py-4" : "max-h-0"
         }`}
+        style={{ zIndex: 49 }}
       >
         <ul className="flex flex-col gap-4 text-center">
           {["home", "about", "projects", "contact"].map((item) => (

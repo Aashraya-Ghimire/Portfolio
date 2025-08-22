@@ -27,7 +27,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="text-white mt-25 px-6">
+    <section id="contact" className="text-white mt-25 px-6 box-border">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}

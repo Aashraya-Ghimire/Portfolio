@@ -5,28 +5,31 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="text-white py-16 px-6">
+    <section
+      id="about"
+      className="text-white py-12 px-4 sm:py-16 sm:px-6 lg:px-12 box-border"
+    >
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="flex items-center justify-center gap-3 text-3xl font-semibold text-[#aa6be4] mb-10"
+        className="flex items-center justify-center gap-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#aa6be4] mb-8 sm:mb-10"
       >
         <FaUser />
         <span>About Me</span>
       </motion.div>
 
       {/* Content */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 max-w-6xl mx-auto px-2">
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden"
+          className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden flex-shrink-0"
         >
           <img
             src="./profile.jpg"
@@ -41,7 +44,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-xl text-2xl leading-relaxed text-center md:text-left"
+          className="max-w-xl text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-center md:text-left"
         >
           <p>
             Hi, I'm{" "}
@@ -66,23 +69,25 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="mt-12 flex justify-center"
+        className="mt-10 sm:mt-12 flex justify-center"
       >
         <a
           href="./Aashraya CV.pdf"
           download
-          className="bg-[#aa6be4] text-white px-6 py-3 rounded-full hover:bg-[#8b4ee0] flex items-center gap-2 transition transform hover:scale-105 shadow-lg"
+          className="bg-[#aa6be4] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-[#8b4ee0] flex items-center gap-2 transition transform hover:scale-105 shadow-lg text-sm sm:text-base md:text-lg"
         >
           <FaDownload />
           Download Resume
         </a>
       </motion.div>
+
+      {/* Divider */}
       <motion.hr
         initial={{ width: 0, opacity: 0 }}
         whileInView={{ width: "80%", opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-[10%]"
+        className="border-none bg-[#9c97f1] h-[0.5px] mt-16 sm:mt-20 my-[30px] mx-[10%]"
       />
     </section>
   );

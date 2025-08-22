@@ -30,7 +30,7 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="text-white px-6">
+    <section id="experience" className="text-white px-6 box-border">
       <h2 className="text-4xl font-bold text-center text-[#aa6be4] mb-16">
         Experience
       </h2>

@@ -31,7 +31,7 @@ function Project() {
   ];
 
   return (
-    <section id="projects" className="text-white py-16 px-6">
+    <section id="projects" className="text-white py-16 px-6 box-border">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
