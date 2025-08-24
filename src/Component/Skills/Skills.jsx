@@ -50,7 +50,7 @@ const Skills = () => {
               />
             </div>
             {/* Skill Name */}
-            <p className="text-base font-medium text-gray-200 group-hover:text-[#aa6be4]">
+            <p className="text-base text-center font-medium text-gray-200 group-hover:text-[#aa6be4]">
               {skill.name}
             </p>
           </motion.div>
