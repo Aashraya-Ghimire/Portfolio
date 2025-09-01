@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="text-white py-12 px-4 sm:py-16 sm:px-6 lg:px-12 box-border"
+      className="w-screen min-h-screen flex flex-col items-center justify-center px-4 text-white box-border"
     >
       {/* Title */}
       <motion.div
@@ -15,14 +15,14 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="flex items-center justify-center gap-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#aa6be4] mb-8 sm:mb-10"
+        className="flex items-center justify-center gap-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#aa6be4] mb-10"
       >
         <FaUser />
         <span>About Me</span>
       </motion.div>
 
       {/* Content */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 max-w-6xl mx-auto px-2">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-6xl px-2">
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -51,7 +51,7 @@ const About = () => {
             <span className="text-[#aa6be4] font-medium">Aashraya Ghimire</span>
             ,{" "}
             <span className="font-medium">
-              17-year-old fresher web developer
+              {new Date().getFullYear() - 2008}-year-old fresher web developer
             </span>{" "}
             from Nepal. I specialize in{" "}
             <span className="text-[#aa6be4]">
@@ -69,12 +69,12 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="mt-10 sm:mt-12 flex justify-center"
+        className="mt-12 flex justify-center w-full"
       >
         <a
           href="./Aashraya CV.pdf"
           download
-          className="bg-[#aa6be4] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-[#8b4ee0] flex items-center gap-2 transition transform hover:scale-105 shadow-lg text-sm sm:text-base md:text-lg"
+          className="bg-[#aa6be4] text-white px-6 py-3 rounded-full hover:bg-[#8b4ee0] flex items-center gap-2 transition transform hover:scale-105 shadow-lg text-base md:text-lg"
         >
           <FaDownload />
           Download Resume
@@ -87,7 +87,7 @@ const About = () => {
         whileInView={{ width: "80%", opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="border-none bg-[#9c97f1] h-[0.5px] mt-16 sm:mt-20 my-[30px] mx-[10%]"
+        className="border-none bg-[#9c97f1] h-[0.5px] mt-16 mx-[10%]"
       />
     </section>
   );
