@@ -1,38 +1,48 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
+  // Smooth scroll to section
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // close mobile menu
     }
   };
 
+  const menuItems = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#12123e] text-white px-4 sm:px-6 lg:px-16 py-4 shadow-md z-50 box-border">
-      <div className="flex justify-between items-center mx-auto">
+    <nav className="fixed top-0 left-0 w-full bg-[#12123e] text-white shadow-md z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div
-          onClick={() => scrollToSection("home")}
-          className="text-xl sm:text-2xl font-semibold cursor-pointer"
-        >
-          Aashraya&apos;s Portfolio
+        <div className="flex items-center gap-3 cursor-pointer">
+          <img src="logo.png" alt="Logo" className="h-10 w-10 object-cover" />
+          <span
+            className="text-2xl font-bold "
+            onClick={() => handleScroll("home")}
+          >
+            Aashraya
+          </span>
         </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-sm sm:text-base">
-          {["home", "about", "projects", "contact"].map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollToSection(item)}
-                className="hover:text-[#9999e2] transition"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
+          {menuItems.map((item) => (
+            <li
+              key={item.id}
+              className="hover:text-[#9999e2] cursor-pointer transition-colors"
+              onClick={() => handleScroll(item.id)}
+            >
+              {item.name}
             </li>
           ))}
         </ul>
@@ -40,11 +50,10 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none"
-            aria-label="Toggle Menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="focus:outline-none p-2"
           >
-            {isOpen ? (
+            {menuOpen ? (
               <HiX className="w-6 h-6" />
             ) : (
               <HiMenu className="w-6 h-6" />
@@ -54,27 +63,21 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden absolute top-full left-0 w-full bg-[#12123e] overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-screen py-4" : "max-h-0"
-        }`}
-        style={{ zIndex: 49 }}
-      >
-        <ul className="flex flex-col gap-4 text-center">
-          {["home", "about", "projects", "contact"].map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollToSection(item)}
-                className="block py-2 text-lg hover:text-[#9999e2] transition"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
+      {menuOpen && (
+        <ul className="md:hidden bg-[#12123e] text-white flex flex-col gap-4 px-4 pb-4">
+          {menuItems.map((item) => (
+            <li
+              key={item.id}
+              className="hover:text-blue-400 cursor-pointer transition-colors"
+              onClick={() => handleScroll(item.id)}
+            >
+              {item.name}
             </li>
           ))}
         </ul>
-      </div>
+      )}
     </nav>
   );
-}
+};
 
 export default Navbar;
