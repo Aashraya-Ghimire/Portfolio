@@ -27,7 +27,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="text-white mt-25 px-6 box-border">
+    <section
+      id="contact"
+      className="w-full max-w-full text-white mt-25 px-6 box-border relative"
+    >
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -113,7 +116,7 @@ function Contact() {
           <img
             src="/contact.png"
             alt="Contact illustration"
-            className="w-full h-auto object-contain rounded-xl"
+            className="w-full max-w-full h-auto object-contain rounded-xl"
           />
         </motion.div>
       </div>

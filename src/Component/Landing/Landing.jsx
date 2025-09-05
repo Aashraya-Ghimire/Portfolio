@@ -10,7 +10,7 @@ import Experience from "../Experience/Experience";
 
 function Landing() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden w-full box-border">
       <Navbar />
       <Herosection />
       <About />

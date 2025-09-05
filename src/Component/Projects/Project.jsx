@@ -10,7 +10,7 @@ function Project() {
         "A basic calculator app that performs arithmetic operations using React and state handling.",
       github:
         "https://github.com/Aashraya-Ghimire/Functional-calculator-using-react",
-      live: "#", // Replace with live preview URL
+      live: "#",
     },
     {
       title: "E-Commerce",
@@ -26,13 +26,15 @@ function Project() {
       description:
         "A modern school website layout showcasing departments, events, and more.",
       github: "https://github.com/Aashraya-Ghimire/school-website",
-      live: "#", // Replace with live preview URL
+      live: "#",
     },
   ];
 
   return (
-    <section id="projects" className="text-white py-16 px-6 box-border">
-      {/* Title */}
+    <section
+      id="projects"
+      className="text-white py-16 px-6 box-border w-full max-w-full relative"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,8 +45,7 @@ function Project() {
         Projects
       </motion.h2>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto w-full">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -52,15 +53,14 @@ function Project() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="relative group bg-[#1e1e3f] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_20px_#aa6be4] transition-all"
+            className="relative group bg-[#1e1e3f] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_20px_#aa6be4] transition-all w-full max-w-full"
           >
-            {/* Live Preview Icon */}
+            {/* Live Preview */}
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
               className="absolute top-3 right-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-              title="Live Preview"
             >
               <div className="bg-black rounded-full h-8 w-8 flex items-center justify-center hover:bg-[#aa6be4]">
                 <svg
@@ -77,13 +77,12 @@ function Project() {
               </div>
             </a>
 
-            {/* GitHub Icon */}
+            {/* GitHub */}
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-              title="View on GitHub"
             >
               <img
                 src="/github.png"
@@ -92,14 +91,12 @@ function Project() {
               />
             </a>
 
-            {/* Project Image */}
             <img
               src={project.img}
               alt={project.title}
-              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full max-w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
 
-            {/* Project Details */}
             <div className="p-4">
               <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
               <p className="text-sm text-gray-300">{project.description}</p>
@@ -108,7 +105,7 @@ function Project() {
         ))}
       </div>
 
-      {/* Footer */}
+      {/* Footer Button */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -126,12 +123,13 @@ function Project() {
           View All
         </a>
       </motion.div>
+
       <motion.hr
         initial={{ width: 0, opacity: 0 }}
         whileInView={{ width: "80%", opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-[10%]"
+        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-auto w-full max-w-full"
       />
     </section>
   );

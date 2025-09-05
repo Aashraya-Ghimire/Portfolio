@@ -30,12 +30,15 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="text-white px-6 box-border">
+    <section
+      id="experience"
+      className="text-white px-6 py-16 w-full max-w-full box-border relative"
+    >
       <h2 className="text-4xl font-bold text-center text-[#aa6be4] mb-16">
         Experience
       </h2>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-5xl mx-auto w-full">
         {/* Timeline line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full my-2 border-l border-gray-100 hidden md:block"></div>
         <div className="absolute left-4 h-full border-l border-gray-100 md:hidden"></div>
@@ -75,7 +78,7 @@ function Experience() {
 
               {/* Card */}
               <div
-                className={`mt-8 md:mt-0 p-6 bg-[#1e1e3f] rounded-xl shadow-lg hover:shadow-[0_0_20px_#aa6be4] transition-all md:w-5/12 ${
+                className={`mt-8 md:mt-0 p-6 bg-[#1e1e3f] rounded-xl shadow-lg hover:shadow-[0_0_20px_#aa6be4] transition-all md:w-5/12 w-full max-w-full ${
                   isLeft
                     ? "md:mr-auto md:text-right"
                     : "md:ml-auto md:text-left"
@@ -104,7 +107,7 @@ function Experience() {
         whileInView={{ width: "80%", opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-auto"
+        className="border-none bg-[#9c97f1] h-[0.5px] mt-20 my-[35px] mx-auto w-full max-w-full"
       />
     </section>
   );

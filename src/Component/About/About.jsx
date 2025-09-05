@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-screen min-h-screen flex flex-col items-center justify-center px-4 text-white box-border"
+      className=" relative w-full max-w-full min-h-full flex flex-col items-center justify-center px-4 text-white box-border"
     >
       {/* Title */}
       <motion.div
@@ -34,7 +34,7 @@ const About = () => {
           <img
             src="./profile.jpg"
             alt="Aashraya Ghimire"
-            className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-300"
+            className="w-full max-w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-300"
           />
         </motion.div>
 

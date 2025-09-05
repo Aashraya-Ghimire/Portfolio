@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="text-white py-12 px-6 mt-5 box-border">
+    <footer className="w-full max-w-full text-white py-12 px-6 mt-5 box-border relative">
       {/* Top Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}

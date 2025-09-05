@@ -18,7 +18,10 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className=" text-white px-6 box-border">
+    <section
+      id="skills"
+      className="relative text-white px-6 box-border w-full max-w-full"
+    >
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
@@ -46,7 +49,7 @@ const Skills = () => {
               <img
                 src={skill.src}
                 alt={skill.name}
-                className="w-12 h-12 object-contain transition-transform duration-300 group-hover:rotate-6"
+                className="w-full max-w-full h-12 object-contain transition-transform duration-300 group-hover:rotate-6"
               />
             </div>
             {/* Skill Name */}
